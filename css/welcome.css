@@ -28,13 +28,13 @@
     z-index: 1;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items:stretch;
 }
 .button{
     position: relative;
     display: block;
-    height: 32px;
+    height: 30px;
     width: 120px;
     background-color:dimgray;
     border-radius: 8px;
@@ -45,7 +45,7 @@
     margin: 1px 2px;
     font-size: 0.5em;
     color: white;
-    transition: 1.5s ease;
+    transition: 0.5s ease;
     font-weight: bold;
   }
 .button:hover{
@@ -75,62 +75,95 @@
     width: 0;
 }
 
-    /*Welcome>header-container END*/
+    /*Welcome content-container End*/
 .welcome .content-container{
     position: relative;
     display: flex;
     height: 600px;
-    padding: 100px 0 0 60px;
-    display: flex;
+    padding: 160px 0 0 60px;
 }
 .title{
-    font-size: 45px;
+    padding: 1px 0 0 13px;
+    font-size: 50px;
     color: transparent;
 }
 .title-1{
-    animation: title_reveal 4s ease forwards  ;
-    animation-delay: 2s;
+    animation: text_reveal 3s ease forwards  ;
+    animation-delay: 1s;
 }
 .title-2{
-    animation: title_reveal 4s ease forwards  ;
-    animation-delay: 2.05s;
+    animation: text_reveal 3s ease forwards  ;
+    animation-delay: 1.05s;
 }
 .title-3{
-    animation: title_reveal 4s ease forwards  ;
-    animation-delay: 2.1s;
+    animation: text_reveal 3s ease forwards  ;
+    animation-delay: 1.1s;
 }
+.description{
+    width: 52%;
+    height: 57vh;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: -20px 0 0 140px;
+    border-radius: 10px;
+    color: transparent;
+
+
+    animation: text_border_bg_reveal 3s ease forwards;
+    animation-delay: 1s;
+}
+.description h2{
+    font-size: 34px;
+    text-align: center;
+    padding: 15px 0 30px 0;
+    animation: text_reveal 3s ease forwards;
+    animation-delay: 3s;
+}
+.description p{
+    font-weight: bold;
+    font-size: 24px;
+    padding: 15px 30px;
+    position: relative;
+    animation: text_reveal 3s ease forwards;
+    animation-delay: 3s;
+}
+.description p::before{
+    content: " ";
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    position: relative;
+    margin: 0 10px 1.9px 0;
+    display: inline-block;
+    border-radius: 50%;
+
+    animation: bg_reveal 3s ease forwards;
+    animation-delay: 2s;
+}
+    /*Welcome content-container End*/
 /*Welcome END*/
 /*Keyframes*/
-@keyframes title_reveal {
+@keyframes text_reveal {
     100%{
         color: white;
     }
 }
+@keyframes text_border_bg_reveal {
+    100%{
+        color: white;
+        border-color: whitesmoke;
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+}
+@keyframes bg_reveal {
+    100%{
+        background-color: #fff;
+    }
+}
+
 /*Keyframes END*/
 /*Media*/
-@media  screen and (max-width: 430px) {
-    .welcome>.content-container{
-        padding: 40px 0 0 0;
-        justify-content: center;
-    }
-    .welcome .title{
-        text-align: center;
-        font-size: 20px;
-        color: white;
-    } 
-    .button:hover{
-        text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
-        cursor: pointer;
-        font-weight: bold;
-        background-color: black;
-        border-radius: 20px;
-        height: 60px;
-        width: 250px;
-        font-size: 1em;
-        padding: 3px 2px;
-        margin-top: 2px;
-        color: white;
-        border: 5px solid white;
-    }
+@media  screen and (max-width: 100px) {
+    
 }
 /*Media END*/
